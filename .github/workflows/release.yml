@@ -27,8 +27,8 @@ jobs:
 
       - name: Build with ESP-IDF
         run: |
-          . $IDF_PATH/export.sh
-          # Build to generate separate binaries
+          # The action sets up the environment, no need to source export.sh manually
+          idf.py set-target esp32c3
           idf.py build
           
           # Use esptool.py to merge everything into one bin
