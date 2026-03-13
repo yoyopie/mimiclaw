@@ -21,8 +21,10 @@ jobs:
           cp main/mimi_secrets.h.example main/mimi_secrets.h
 
       - name: Build with ESP-IDF
+        shell: bash
         run: |
-          # No need to source export.sh in the official container
+          . /opt/esp/idf/export.sh
+          # Set target and build
           idf.py set-target esp32c3
           idf.py build
           
