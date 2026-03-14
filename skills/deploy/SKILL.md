@@ -26,7 +26,7 @@ End-to-end guide for deploying MimiClaw to an ESP32-C3 dev board.
 - **Telegram Bot Token** — create via [@BotFather](https://t.me/BotFather) on Telegram
 - **Anthropic API Key** — from [console.anthropic.com](https://console.anthropic.com)
 - *(Optional)* Brave Search API key — from [brave.com/search/api](https://brave.com/search/api/)
-- *(Optional)* HTTP proxy host:port — if in China or restricted network
+- *(Optional)* HTTP proxy host:port — if in a restricted network
 
 ## Step 1: Clone and Set Target
 
@@ -55,7 +55,7 @@ Edit `main/mimi_secrets.h` — fill in ALL required fields:
 #define MIMI_SECRET_PROXY_PORT      ""                     // optional: e.g. "7897"
 ```
 
-**Proxy setup (China users):**
+**Proxy setup:**
 If you need a proxy to reach Telegram/Anthropic APIs, set both `PROXY_HOST` and `PROXY_PORT`. The proxy machine must:
 - Be on the same LAN as the ESP32
 - Support HTTP CONNECT method (Clash, V2Ray, etc.)

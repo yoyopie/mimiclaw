@@ -3,7 +3,7 @@
 > [!NOTE]
 > This project is derived from the original [mimiclaw](https://github.com/memovai/mimiclaw) project.
 
-MimiClaw is a person AI assistant running on ESP32. This port is specifically tuned for the **ESP32-C3** (No PSRAM version) with extreme memory optimizations and stable connectivity for Mainland China.
+MimiClaw is a person AI assistant running on ESP32. This port is specifically tuned for the **ESP32-C3** (No PSRAM version) with extreme memory optimizations and stable connectivity across various networks.
 
 ---
 
@@ -51,8 +51,8 @@ The project uses specialized config files for the C3.
 
 ## ⚙️ Key C3 Optimizations
 *   **Memory Management**: Enabled MbedTLS dynamic buffers and capped TLS output chunks to 2KB to prevent OOM errors on fragmented heap.
-*   **Mainland China Connectivity**: 
-    *   **Time Sync**: Targets `baidu.com` via plain HTTP HEAD request (zero TLS overhead).
+*   **Network Connectivity**: 
+    *   **Time Sync**: Targets reliable endpoints via plain HTTP HEAD request (zero TLS overhead).
     *   **Insecure TLS**: Bypasses full certificate chain validation by default to save ~40KB RAM.
 *   **Storage**: Implemented DJB2 hashing for chat sessions to bypass SPIFFS 31-character filename limit.
 *   **Response Filtering**: Automatically strips `<think>` tokens from LLM output for a cleaner UI.
